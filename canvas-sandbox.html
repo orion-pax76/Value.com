@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!-- saved from url=(0660)https://project-szzfghpbwbjdpl9citiq.framercanvas.com/s/app.e19f2fb6b337da09210e347289296fded00c5271/canvas-sandbox.html#services=%7B%22api%22%3A%22https%3A%2F%2Fapi.framer.com%22%2C%22app%22%3A%22https%3A%2F%2Fframer.com%22%2C%22canvas%22%3A%22https%3A%2F%2Fproject-szzfghpbwbjdpl9citiq.framercanvas.com%22%2C%22events%22%3A%22https%3A%2F%2Fevents.framer.com%22%2C%22login%22%3A%22https%3A%2F%2Fframer.com%2Flogin%22%2C%22userContent%22%3A%22https%3A%2F%2Fframerusercontent.com%22%2C%22modulesCDN%22%3A%22https%3A%2F%2Fframerusercontent.com%2Fmodules%22%2C%22modulesShortLink%22%3A%22https%3A%2F%2Fframer.com%2Fm%22%2C%22previewDomain%22%3A%22framer.app%22%7D -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<script type="importmap-shim">
+{
+	"imports": {
+		"framer": "./scripts/framer.esm.js",
+		"framer-motion": "https://app.framerstatic.com/framer-motion-esm-shim.R7A4YVQY.mjs",
+		"react": "./scripts/react.esm.js",
+		"react/jsx-runtime": "./scripts/react-jsx-runtime.esm.js",
+		"react/jsx-dev-runtime": "./scripts/react-jsx-runtime.esm.js",
+		"react-dom": "./scripts/react-dom.esm.js",
+		"react-dom/client": "./scripts/react-dom.esm.js",
+		"react-dom/server": "./scripts/react-dom-server.esm.js"
+	},
+	"scopes": {
+		"https://ga.jspm.io/": {
+			"fs": "https://framer.com/m/framer/empty.js@0.1.0",
+			"process": "https://framer.com/m/framer/empty.js@0.1.0",
+			"scheduler": "https://ga.jspm.io/npm:scheduler@0.23.0/index.js"
+		}
+	}
+}
+</script>
+
+
+		
+		
+			<script src="./react.production.min.js.download"></script>
+<script src="./react-dom.production.min.js.download"></script>
+<script src="./react-dom-server-legacy.browser.production.min.js.download"></script>
+		
+
+		
+<script>
+	window.__previousRequire__ = window.require
+	window.__previousExports__ = window.exports
+	window.__previousProcess__ = window.process
+
+	window.require = (moduleSpecifier) => {
+		switch (moduleSpecifier) {
+			case "react":
+				return window.React
+			case "object-assign":
+				return Object.assign
+			default:
+				throw new Error("react-jsx-runtime requires unexpected module:" + moduleSpecifier)
+		}
+	}
+
+	window.__REACT_RUNTIME_JSX__ = { Fragment: undefined, jsx: undefined, jsxs: undefined, jsxDEV: undefined }
+	window.exports = {
+		set Fragment(value) { window.__REACT_RUNTIME_JSX__.Fragment = value; },
+		set jsx(value) { window.__REACT_RUNTIME_JSX__.jsx = value; },
+		set jsxs(value) { window.__REACT_RUNTIME_JSX__.jsxs = value; },
+		set jsxDEV(value) {window.__REACT_RUNTIME_JSX__.jsxDEV = value; }
+	}
+</script>
+
+	<script>
+		window.process = { env: { NODE_ENV: "production" } }
+	</script>
+	<script src="./react-jsx-runtime.production.min.js.download"></script>
+	<script>
+		;(function() {
+			const reactJsxRuntimeProductionGlobals = JSON.parse(`["f", "k", "l", "m", "n", "p", "q"]
+`)
+			if (!Array.isArray(reactJsxRuntimeProductionGlobals) || reactJsxRuntimeProductionGlobals.length === 0) {
+				throw new Error("react-jsx-runtime production globals config missing")
+			}
+
+			for (const globalName of reactJsxRuntimeProductionGlobals) {
+				const value = window[globalName]
+				Object.defineProperty(window, globalName, {
+					value,
+					writable: false,
+					configurable: false,
+					enumerable: true,
+				})
+			}
+		})()
+	</script>
+
+<script>
+	// Restore the globals to their prev values.
+	window.require = window.__previousRequire__
+	window.exports = window.__previousExports__
+	window.process = window.__previousProcess__
+</script>
+
+
+		
+		<link href="./canvas-sandbox.J34IE46M.css" rel="stylesheet">
+
+		
+		<link href="https://app.framerstatic.com/chunk-ZFSBLIZ5.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-H4MSPG7W.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-NKL3YJZC.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-LTYGJUPU.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-KPMZENE5.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-YRQ7G4QH.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-VHFKZWVR.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-23ZY4JRG.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-QCGKPHEK.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-VCVHFTAW.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-OFKYDV5W.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-VPDJYJ6F.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-YW7YN4CP.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-Q652OIYH.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-JHGFSY77.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-7GKAI4PF.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-WLHSDIGQ.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-5JQQYZG5.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-4JY5UMT2.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-MQK3N3KJ.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-MYL546Y2.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-AHC3ISWT.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-AUNF3KWQ.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-67IDBBKJ.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-EQBCTBZ3.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-7HCNY72X.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-BABVF3WN.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-L2QYKMOJ.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-CXXFSPZR.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-AYYBTPZU.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-UYIYJ4FN.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-LA34HORX.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-WJKXLTYC.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-XD24P57D.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-W774OHJB.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-UUS4WEGC.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-JTCAKYEM.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-EERSFQYH.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-UZNETSBG.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-HZLWYBUG.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-EYMNQYLM.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-WRBBN7SY.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-RNHTTH2C.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-6TFWVVAP.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-5WDLMAA7.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-YSP5ZHDJ.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-AYNVEX5D.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-KWIZ6NK4.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-VBCXFFMV.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-6C6VSETA.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-KYPY4QS7.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-FYUJQV6J.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-YHM4FVFG.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-REJ2XCEK.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-KLNCRFRA.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-3WKMMIQB.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-LVHJNTCP.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-SPYOA764.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-6P3J2XDB.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-3XODZFSH.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-NCJD6SYR.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-QO4DKZVD.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-72WJEADR.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-W5X4LWQ7.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-UXOZ3Z46.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-VULKBZRG.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-NK7EQPOL.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-VZJCJAEC.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-A3ZGY5ZV.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-ISW56VHA.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-EOKOGYGS.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-PAW2QVED.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-SPWSWTND.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-XKWH5HHO.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-IGXIZOOT.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-UR3HTHZC.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-6WHF36ZV.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-DHUTNJFU.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-GXCNATQC.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-IQI2NEUY.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-24G7FGVN.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-6CR6YZSR.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-3GE5VLEJ.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-PHJA3I47.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-5U4SUQEI.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-NJ7YNQFV.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-B5COD3QE.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-OYKMIZHG.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-FG6DIZP6.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-UV4ONTSV.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-W46AUBE5.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-2RBF7LLL.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-OU5D6MCA.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-42UZX245.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-QFU6OGL3.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-6FEQJVMB.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-6YG4ZY2N.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-MW3Q7TLO.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-R3RMO3B5.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-V7FUNARM.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-57DODPIO.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-4XVSDTDC.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-SPCDB4LY.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-DBWOT2XT.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-LQLFGCPO.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-4UC33BVM.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-XFC6OVIX.mjs" rel="modulepreload">
+<link href="https://app.framerstatic.com/chunk-GBWZWM2Q.mjs" rel="modulepreload">
+	<style type="text/css" data-framer-css="true"></style></head>
+
+	<body class="framer-theme-dark" data-framer-theme="dark">
+		<main><div style="--token-df646fcb-ac3e-41f6-a088-22a1777bf2ce: rgba(255, 255, 255, 0.44); --token-a655ab31-ff4f-4897-8092-8a0b61ed5138: rgb(128, 176, 44);"><div dir="ltr" class="gh7q592" id="canvas-container" style="position: fixed; top: 0px; left: 0px; width: 0px; height: 0px; will-change: transform; isolation: isolate; transform: scale(1) translateX(-838px) translateY(131px);"><div class="" style="--framer-viewport-height: 800px;"><div id="wrapper-xp0V5rHQz" class="groundNodeWrapper" style="transition: opacity 50ms ease-out; -webkit-font-smoothing: antialiased; --framer-canvas-fixed-position: absolute; --framer-viewport-height: 800px; position: fixed; display: block; transform-origin: left top; will-change: transform; isolation: isolate; contain: layout style;"><style>
+                #wrapper-xp0V5rHQz {
+                    transform: translateX(1300px) translateY(0px)  scale(1); width: 1200px; height: 720px;
+                }
+                #inner-xp0V5rHQz {
+                    transform: scale(1); width: 1200px; height: 720px;
+                    display: block; visibility: visible;
+                }
+            </style><div id="inner-xp0V5rHQz" dir="ltr" style="transform-origin: left top;"><div data-framer-component-type="Frame" id="id_xp0V5rHQz" data-framer-name="Value — Logo Study" name="Value — Logo Study" style="display: flex; flex: 0 0 auto; user-select: none; pointer-events: none; width: 1200px; height: 720px; top: 0px; left: 0px; padding: 96px; flex-flow: column; place-content: center; align-items: center; gap: 52px; overflow-x: var(--overflow-clip-fallback, clip); overflow-y: var(--overflow-clip-fallback, clip); transform: none;"><div data-framer-background-image-wrapper="true" style="position: absolute; border-radius: inherit; corner-shape: inherit; inset: 0px;"><div style="display: contents; border-radius: inherit; corner-shape: inherit;"><img loading="eager" src="./zA1XGoKexchnf6BJ7UnE4DG33iY.jpg" style="display: block; width: 100%; height: 100%; border-radius: inherit; corner-shape: inherit; object-position: center center; object-fit: cover; position: absolute; visibility: hidden;"><img loading="lazy" style="display: block; width: 100%; height: 100%; border-radius: inherit; corner-shape: inherit; object-position: center center; object-fit: cover; position: absolute; visibility: hidden;" src="./zA1XGoKexchnf6BJ7UnE4DG33iY(1).jpg"><img loading="lazy" style="display: block; width: 100%; height: 100%; border-radius: inherit; corner-shape: inherit; object-position: center center; object-fit: cover; position: absolute; visibility: visible;" src="./zA1XGoKexchnf6BJ7UnE4DG33iY(2).jpg"></div></div><div data-framer-component-type="Frame" id="id_BEQ9zpTd2" data-framer-name="Primary Lockup" name="Primary Lockup" style="display: flex; flex: 0 0 auto; user-select: none; pointer-events: none; width: 1022px; height: 317px; position: relative; padding: 0px; flex-flow: row; place-content: center; align-items: center; gap: 18px; overflow: visible; transform: none;"><svg data-framer-component-type="Frame" class="framer-cM5Rd" role="presentation" viewBox="0 0 24 24" style="--1m973uw: rgb(66, 68, 199); --js9iwy: 3; display: block; flex: 0 0 auto; user-select: none; width: 32.8767%; height: auto; position: relative; transform: none;"><use href="#767078081"></use></svg><div id="id_AgPcJqeiu" data-framer-name="Value Wordmark" data-framer-component-type="RichTextContainer" style="opacity: 1; width: 78%; height: 103%; white-space: pre-wrap; overflow-wrap: break-word; word-break: break-word; position: relative; transform: none;"><h1 dir="auto" class="framer-text" style="--framer-font-family: &quot;Oleo Script Swash Caps&quot;, &quot;Oleo Script Swash Caps Placeholder&quot;, sans-serif; --font-selector: R0Y7T2xlbyBTY3JpcHQgU3dhc2ggQ2Fwcy1yZWd1bGFy; --framer-text-color: rgb(10, 61, 66); --framer-font-size: 331px; --framer-letter-spacing: -3.67px; --framer-line-height: 0.95em;"><span data-text-fill="true" class="framer-text" style="background-image: linear-gradient(135deg, rgb(0, 46, 145) 0%, rgb(9, 225, 232) 56.226%, rgb(0, 106, 128) 100%);">Value</span></h1></div></div><div id="id_hZ67vu1me" data-framer-name="Identity Caption" data-framer-component-type="RichTextContainer" style="opacity: 1; left: 50%; top: 70.8333%; width: 69.6667%; height: 12.3611%; position: absolute; white-space: pre-wrap; overflow-wrap: break-word; word-break: break-word; z-index: 1; transform: translate(-50%, -50%);"><p dir="auto" class="framer-text" style="--framer-font-family: &quot;Comforter Brush&quot;, &quot;Comforter Brush Placeholder&quot;, sans-serif; --font-selector: R0Y7Q29tZm9ydGVyIEJydXNoLXJlZ3VsYXI=; --framer-text-color: rgb(242, 254, 254); --framer-font-size: 43px; --framer-letter-spacing: 5.82px; --framer-text-transform: uppercase; --framer-line-height: 2.9em;">A mark for measured ambition</p></div><div data-framer-component-type="Frame" id="id_wauozSXxx" data-framer-name="Identity Detail" name="Identity Detail" style="display: flex; flex: 0 0 auto; user-select: none; pointer-events: none; width: 272px; height: 16px; position: relative; padding: 0px; flex-flow: row; place-content: center; align-items: center; gap: 10px; overflow: visible; transform: none;"></div><div id="framer-viewport-portal-root-xp0V5rHQz-stack" style="top: 0px; left: 0px; right: 0px; position: absolute; height: 800px; max-height: 100%;"></div></div><div id="framer-portal-root-xp0V5rHQz-stack" style="position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; z-index: 11;"></div></div></div><div id="wrapper-P22RH7ULX" class="groundNodeWrapper" style="transition: opacity 50ms ease-out; -webkit-font-smoothing: antialiased; --framer-canvas-fixed-position: absolute; position: fixed; display: block; transform-origin: left top; will-change: transform; isolation: isolate; contain: layout style;"><style>
+                #wrapper-P22RH7ULX {
+                    transform: translateX(1247px) translateY(-374px)  scale(1); width: 172px; height: 38px;
+                }
+                #inner-P22RH7ULX {
+                    transform: scale(1); width: 172px; height: 38px;
+                    display: block; visibility: visible;
+                }
+            </style><div id="inner-P22RH7ULX" dir="ltr" style="transform-origin: left top;"><div id="id_P22RH7ULX" data-framer-component-type="RichTextContainer" style="opacity: 1; width: 172px; min-width: 172px; height: 38px; white-space: pre-wrap; overflow-wrap: break-word; word-break: break-word; --framer-link-text-color: rgb(0, 153, 255); --framer-link-text-decoration: underline; left: 0px; top: 0px; transform: none;"><p class="framer-text" style="--framer-font-family: &quot;Inter&quot;, &quot;Inter Placeholder&quot;, sans-serif; --framer-font-style: normal; --framer-font-weight: 400; --framer-font-variation-axes: normal; --font-selector: SW50ZXI=; --framer-text-color: hsl(0, 0%, 0%); --framer-font-size: 16px; --framer-letter-spacing: 0em; --framer-line-height: 1.2em; --framer-text-alignment: start;"><br class="framer-text trailing-break"></p></div><div id="framer-portal-root-P22RH7ULX-none" style="position: fixed; width: 100%; height: 100%; top: 0px; left: 0px; z-index: 11;"></div><div class="c12zorou c62fy97"></div></div></div></div></div></div></main>
+		<script>
+	const defaultFetch = window.fetch.bind(window)
+	window.fetch = function(input, init) {
+		// Can be set via `installShimFetchHook` from `importShim.ts`.
+		const fetchHook = window.esmsFetchHook
+		if (fetchHook) return fetchHook(input, init, defaultFetch, "global")
+		return defaultFetch(input, init)
+	}
+
+	// Init options for es-module-shims: https://github.com/guybedford/es-module-shims#init-options
+	window.esmsInitOptions = {
+		shimMode: true,
+		mapOverrides: true,
+		revokeBlobURLs: true,
+		resolve: function (id, parentUrl, defaultResolve) {
+			// Can be set via `installShimResolveHook` from `importShim.ts`.
+			const resolveHook = window.esmsResolveHook
+			if (resolveHook) return resolveHook(id, parentUrl, defaultResolve)
+			return defaultResolve(id, parentUrl)
+		},
+		fetch: function(input, init) {
+			// Can be set via `installShimFetchHook` from `importShim.ts`.
+			const fetchHook = window.esmsFetchHook
+			if (fetchHook) return fetchHook(input, init, defaultFetch, "module-loader")
+			return defaultFetch(input, init)
+		},
+	}
+
+	// A lot of libraries assume `process.env.NODE_ENV` is present in runtime/buildtime, so we are polyfilling it
+	window.process = {
+		...window.process,
+		env: {
+			...window.process?.env,
+			NODE_ENV: "production",
+		},
+	}
+</script>
+
+		
+		<script src="./canvas-sandbox.VVGXXCYN.mjs" type="module"></script>
+
+
+<script type="importmap-shim" id="framer-user-importmap">{
+    "imports": {}
+}</script><script type="importmap-shim" id="framer-local-modules">{
+    "imports": {
+        "#framer/local/screen/augiA20Il/augiA20Il.js": "https://framerusercontent.com/modules/pTYu3lqQYYZrya1zWxCz/tnaRT5qVIgTNZOkkOQt4/augiA20Il.js",
+        "#framer/local/siteMetadata/siteMetadata/siteMetadata.js": "https://framerusercontent.com/modules/hGWQ6DoocusTRlKjXbzF/itczqvbEqpED3jEVlLGI/siteMetadata.js",
+        "#framer/local/snippets/snippets/snippets.js": "https://framerusercontent.com/modules/Q74MFx2K23ViC3DeZN0e/xAAkGd02j0ebN0yhJdxb/snippets.js",
+        "#framer/local/screen/vL1vPEMuP/vL1vPEMuP.js": "https://framerusercontent.com/modules/XTeH0fqwqtmXicsClwUj/duwnkcL7jhupxTcN4dID/vL1vPEMuP.js",
+        "#framer/local/webPageMetadata/augiA20Il/augiA20Il.js": "https://framerusercontent.com/modules/xKXwGjVVQj8XoX3Qqdog/JhegqkwDCKBGWiE72Zlt/augiA20Il.js",
+        "#framer/local/codeFile/auqjQvv/Examples.js": "https://framerusercontent.com/modules/9l0bh2yNg2fSJtVlG1Dw/bJY2qKelEhFol7PskleW/Examples.js",
+        "#framer/local/webPageMetadata/vL1vPEMuP/vL1vPEMuP.js": "https://framerusercontent.com/modules/EgY5O7yIeJnsLoOnEa6L/yaC9kmJ4mwkN5Aq1uTQz/vL1vPEMuP.js",
+        "#framer/local/design/xp0V5rHQz/xp0V5rHQz.js": "blob:https://project-szzfghpbwbjdpl9citiq.framercanvas.com/0f28ff77-edd0-4947-976b-f694e20df706"
+    },
+    "scopes": {}
+}</script><div id="svg-templates" aria-hidden="true" style="position: absolute; overflow: hidden; bottom: 0px; left: 0px; width: 0px; height: 0px; z-index: 0; contain: strict;"><svg display="block" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="767078081"><path d="M 1 9 C 0.448 9 0 8.552 0 8 L 0 1 C 0 0.448 0.448 0 1 0 L 6 0 C 6.552 0 7 0.448 7 1 L 7 8 C 7 8.552 6.552 9 6 9 Z" fill="transparent" height="9px" id="osy16rK1T" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--js9iwy, 2)" stroke="var(--1m973uw, rgb(0,0,0))" transform="translate(3 3)" width="7px"></path><path d="M 1 5 C 0.448 5 0 4.552 0 4 L 0 1 C 0 0.448 0.448 0 1 0 L 6 0 C 6.552 0 7 0.448 7 1 L 7 4 C 7 4.552 6.552 5 6 5 Z" fill="transparent" height="5px" id="X_Idh03Ov" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--js9iwy, 2)" stroke="var(--1m973uw, rgb(0,0,0))" transform="translate(14 3)" width="7px"></path><path d="M 1 9 C 0.448 9 0 8.552 0 8 L 0 1 C 0 0.448 0.448 0 1 0 L 6 0 C 6.552 0 7 0.448 7 1 L 7 8 C 7 8.552 6.552 9 6 9 Z" fill="transparent" height="9px" id="vSZLR32LV" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--js9iwy, 2)" stroke="var(--1m973uw, rgb(0,0,0))" transform="translate(14 12)" width="7px"></path><path d="M 1 5 C 0.448 5 0 4.552 0 4 L 0 1 C 0 0.448 0.448 0 1 0 L 6 0 C 6.552 0 7 0.448 7 1 L 7 4 C 7 4.552 6.552 5 6 5 Z" fill="transparent" height="5px" id="wpdI12i6l" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--js9iwy, 2)" stroke="var(--1m973uw, rgb(0,0,0))" transform="translate(3 16)" width="7px"></path></svg></div><script type="importmap-shim" id="framer-temp-importmap-0.04560517237625683">{
+    "imports": {},
+    "scopes": {
+        "https://framerusercontent.com/modules/da2esN7EVKfz5OO8WG8y/0VlNuM99H60bkAddSoI9/": {
+            "@dotlottie/player-component": "https://ga.jspm.io/npm:@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs",
+            "@lottiefiles/dotlottie-react": "https://ga.jspm.io/npm:@lottiefiles/dotlottie-react@0.18.3/dist/browser/index.js",
+            "@lottiefiles/dotlottie-web": "https://ga.jspm.io/npm:@lottiefiles/dotlottie-web@0.65.0/dist/index.js"
+        }
+    }
+}</script></body></html>

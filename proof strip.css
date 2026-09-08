@@ -1,0 +1,56 @@
+/* PROOF STRIP */
+.proof {
+  background: #0b0b0b;
+  padding: 80px 24px;
+  border-radius: 20px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+.proof-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.proof-stat {
+  flex: 1 1 220px;
+  padding: 0 32px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.proof-stat:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.proof-number {
+  font-family: "Switzer Semibold", sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 3.4vw, 40px);
+  color: #fff;
+  line-height: 1;
+}
+
+.proof-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 30ch;
+}
+
+@media (max-width: 740px) {
+  .proof-inner { flex-direction: column; gap: 32px; }
+  .proof-stat { border-left: none; padding-left: 0; border-top: 1px solid rgba(255, 255, 255, 0.18); padding-top: 20px; }
+  .proof-stat:first-child { border-top: none; padding-top: 0; }
+}
