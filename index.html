@@ -511,7 +511,7 @@
       overflow: hidden;
       min-height: 100vh;
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
-              url('forest-landscape.webp') center/cover no-repeat;
+              url('pink.webp') center/cover no-repeat;
       color: #fff;
       padding: 80px 40px;
       backdrop-filter: blur(10px) saturate(160%) brightness(1.05);
@@ -938,13 +938,16 @@
       border-radius: 0 0 28px 28px;
       overflow: hidden;
       min-height:100vh;
-      background: linear-gradient(135deg, 
-       rgba(255, 255, 255, 0.04),
-       rgba(255, 255, 255, 0.01)),
-              url('panel4-background.webp') center/cover no-repeat;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
+              url('purple.webp') center/cover no-repeat;
       padding: 70px 7vw 60px;;
       border: none;
-      box-shadow: none;
+      backdrop-filter: blur(10px) saturate(160%) brightness(1.05);
+      -webkit-backdrop-filter: blur(10px) saturate(160%) brightness(1.05);
+      box-shadow:
+         inset 0 1px 1px rgba(255, 255, 255, 0.5),   /* top edge highlight */
+         inset 0 -1px 1px rgba(255, 255, 255, 0.15), /* bottom edge */
+         0 10px 40px rgba(0, 0, 0, 0.2);
     }
 
     #panel4 .hero2-inner {
