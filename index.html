@@ -1542,11 +1542,6 @@
         z-index: 9;
       }
       
-      .faqs {
-        position: relative;
-        z-index: 1;
-        margin-top: calc(var(--overlap-faq) * -1);
-        padding-bottom: 14px;
       }
       
       .hero3 {
@@ -1555,13 +1550,6 @@
       }
       
       /* Footer lives inside .faqs, sits above the FAQ background, in normal flow */
-      .faqs .site-footer {
-        position: relative;
-        z-index: 2;
-        margin-top: calc(var(--overlap-footer) * -1);
-        border-radius: 28px 28px 0 0;
-        overflow: hidden;
-      }
       
       @media (max-width: 768px) {
         :root {
@@ -1578,12 +1566,6 @@
         .hero3 {
           padding-top: calc(90px + var(--overlap-faq));
           padding-bottom: calc(100px + var(--overlap-footer));
-        }
-        .faqs { padding-bottom: 8px;}
-        .faqs .site-footer {
-          margin-left: 8px;
-          margin-right: 8px;
-          border-radius: 24px;
         }
        }
   </style>
