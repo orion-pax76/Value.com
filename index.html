@@ -1503,6 +1503,81 @@
         .feature-body p br { display: none; }
 
       }
+            /* =========================================================
+         Z-INDEX / REVEAL STACK
+         ========================================================= */
+      :root {
+        --overlap-lg: 70px;      /* panel   -> proof   */
+        --overlap-md: 40px;      /* proof   -> panel2  */
+        --overlap-faq: 28px;     /* panel4  -> faq     */
+        --overlap-footer: 40px;  /* footer  -> faq     */
+      }
+      
+      /* Panel covers proof strip, proof covers panel2 */
+      .panel {
+        position: relative;
+        z-index: 5;
+      }
+      
+      .proof {
+        position: relative;
+        z-index: 4;
+        margin-top: calc(var(--overlap-lg) * -1);
+        padding-top: calc(56px + var(--overlap-lg));
+        border-radius: 0 0 var(--overlap-md) var(--overlap-md);
+      }
+      
+      .panel2 {
+        position: relative;
+        z-index: 1;
+        margin-top: calc(var(--overlap-md) * -1);
+        padding-top: calc(80px + var(--overlap-md));
+      }
+      
+      /* Panel 3 stays above everything, panel 4 covers the FAQ */
+      #panel3 { z-index: 10; }
+      
+      #panel4 {
+        position: relative;
+        z-index: 9;
+      }
+      
+      .faqs {
+        position: relative;
+        z-index: 1;
+        margin-top: calc(var(--overlap-faq) * -1);
+      }
+      
+      .hero3 {
+        padding-top: calc(120px + var(--overlap-faq));
+        padding-bottom: calc(130px + var(--overlap-footer)); /* keeps FAQ content clear of the footer */
+      }
+      
+      /* Footer lives inside .faqs, sits above the FAQ background, in normal flow */
+      .faqs .site-footer {
+        position: relative;
+        z-index: 2;
+        margin-top: calc(var(--overlap-footer) * -1);
+        border-radius: 28px 28px 0 0;
+      }
+      
+      @media (max-width: 768px) {
+        :root {
+          --overlap-lg: 28px;
+          --overlap-md: 24px;
+        }
+      
+        /* the panel's bottom corners need to be rounded for the tuck-under to show */
+        .panel { border-radius: 28px; }
+        .panel2 { padding-top: calc(48px + var(--overlap-md)); }
+      }
+      
+      @media (max-width: 700px) {
+        .hero3 {
+          padding-top: calc(90px + var(--overlap-faq));
+          padding-bottom: calc(100px + var(--overlap-footer));
+        }
+       }
   </style>
 </head>
 
@@ -1914,6 +1989,21 @@
       </nav>
     </main>
 
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+               <img src="value-dark-logo.webp" alt="Value" class="footer-logo" />
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#panel">Home</a>
+                <a href="#panel2">Features</a>
+                <a href="#panel3">Value ai</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <p class="footer-copy">&copy; 2026 Value. All rights reserved.</p>
+        </div>
+    </footer>
+
   </section>
   
  
@@ -1970,21 +2060,7 @@
   </div> 
  </main> 
   
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="value-dark-logo.webp" alt="Value" class="footer-logo" />
-      </div>
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="#panel">Home</a>
-        <a href="#panel2">Features</a>
-        <a href="#panel3">Value ai</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <p class="footer-copy">&copy; 2026 Value. All rights reserved.</p>
-    </div>
-  </footer>
+
 
 
   
