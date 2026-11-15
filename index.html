@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="value.Waitlist.css"/>
   <link rel="stylesheet" href="proof-strip.css"/>
   <link rel="stylesheet" href="footer.css"/>
+  <link rel="stylesheet" href="splash.css"/>
   <style>
     /* ---------- your existing CSS (unchanged) ---------- */
     /* ROOT VARIABLES */
@@ -1572,6 +1573,14 @@
 </head>
 
 <body>
+  <div class="splash" id="splash" role="status" aria-label="Loading Value" style="--splash-ms: 3000ms">
+     <div class="splash__content">
+       <h1 class="splash__logo">Value</h1>
+       <p class="splash__tagline"> A Mark of Measured Ambition</p>
+       <div class="splash__bar" aria-hidden="true"><span></span></div>
+     </div> 
+     <button type="button" class="splash__skip" id="splashSkip">Skip</button>
+  </div>
  <main>
   <!-- HERO SECTION -->
   <header class="hero" id="main">
@@ -2588,6 +2597,44 @@
           openModal();
         });
       }
+    })();
+  </script>
+  <script>
+    (function () {
+      let splash = document.getElementById('splash');
+      if (!splash) return;
+
+      let SHOW_MS = 3000;
+      let REDUCED_MOTION_MS = 800;
+      let reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let done = false;
+
+      document.body.style.overflow = 'hidden'; // no scrolling behind the splash
+
+      function finish(skipped) {
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        window.removeEventListener('keydown', onKey);
+
+        function remove() {
+          splash.remove();
+          document.body.style.overflow='';
+        }
+
+        if (skipped) {
+          splash.classList.add('is-leaving');
+           setTimeout(remove, 300);
+        } else{
+          remove();
+        }
+      }
+      function onKey(e) {
+        if (['Enter', ' ', 'Escape'].indexOf(e.key) !== -1) finish(true);
+      }
+      var timer = setTimeout(function () { finish(false); }, reduce ? REDUCED_MOTION_MS : SHOW_MS);
+      window.addEventListener('keydown', onKey);
+      splash.addEventListener('click', function () { finish(true); });
     })();
   </script>
 </body>
