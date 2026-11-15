@@ -1581,6 +1581,44 @@
      </div> 
      <button type="button" class="splash__skip" id="splashSkip">Skip</button>
   </div>
+    <script>
+    (function () {
+      let splash = document.getElementById('splash');
+      if (!splash) return;
+
+      let SHOW_MS = 3000;
+      let REDUCED_MOTION_MS = 800;
+      let reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let done = false;
+
+      document.body.style.overflow = 'hidden'; // no scrolling behind the splash
+
+      function finish(skipped) {
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        window.removeEventListener('keydown', onKey);
+
+        function remove() {
+          splash.remove();
+          document.body.style.overflow='';
+        }
+
+        if (skipped) {
+          splash.classList.add('is-leaving');
+           setTimeout(remove, 300);
+        } else{
+          remove();
+        }
+      }
+      function onKey(e) {
+        if (['Enter', ' ', 'Escape'].indexOf(e.key) !== -1) finish(true);
+      }
+      var timer = setTimeout(function () { finish(false); }, reduce ? REDUCED_MOTION_MS : SHOW_MS);
+      window.addEventListener('keydown', onKey);
+      splash.addEventListener('click', function () { finish(true); });
+    })();
+  </script>
  <main>
   <!-- HERO SECTION -->
   <header class="hero" id="main">
@@ -2599,43 +2637,6 @@
       }
     })();
   </script>
-  <script>
-    (function () {
-      let splash = document.getElementById('splash');
-      if (!splash) return;
 
-      let SHOW_MS = 3000;
-      let REDUCED_MOTION_MS = 800;
-      let reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      let done = false;
-
-      document.body.style.overflow = 'hidden'; // no scrolling behind the splash
-
-      function finish(skipped) {
-        if (done) return;
-        done = true;
-        clearTimeout(timer);
-        window.removeEventListener('keydown', onKey);
-
-        function remove() {
-          splash.remove();
-          document.body.style.overflow='';
-        }
-
-        if (skipped) {
-          splash.classList.add('is-leaving');
-           setTimeout(remove, 300);
-        } else{
-          remove();
-        }
-      }
-      function onKey(e) {
-        if (['Enter', ' ', 'Escape'].indexOf(e.key) !== -1) finish(true);
-      }
-      var timer = setTimeout(function () { finish(false); }, reduce ? REDUCED_MOTION_MS : SHOW_MS);
-      window.addEventListener('keydown', onKey);
-      splash.addEventListener('click', function () { finish(true); });
-    })();
-  </script>
 </body>
 </html>
