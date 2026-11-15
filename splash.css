@@ -13,7 +13,6 @@
     url("Astronaut-Drifting.webp") center / cover no-repeat,
     #06101d;
   animation:
-    splash-fade-in 400ms ease both,
     splash-fade-out 400ms ease calc(var(--splash-ms, 2600ms) - 400ms) forwards;
 }
 
