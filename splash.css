@@ -1,0 +1,98 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(5, 15, 30, 0.72), rgba(5, 15, 30, 0.9)),
+    url("/Astronaut-Drifting.webp") center / cover no-repeat,
+    #06101d;
+  animation:
+    splash-fade-in 400ms ease both,
+    splash-fade-out 400ms ease calc(var(--splash-ms, 2600ms) - 400ms) forwards;
+}
+
+.splash__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.splash__logo {
+  margin: 0;
+  font-size: clamp(56px, 9vw, 120px);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-indent: 0.12em;               /* keeps the spaced letters optically centred */
+  text-shadow: 0 2px 24px rgba(15, 40, 65, 0.35);
+  animation: splash-rise 1100ms cubic-bezier(.16, 1, .3, 1) 200ms both;
+}
+
+.splash__tagline {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.82);
+  animation: splash-rise 900ms ease 700ms both;
+}
+
+.splash__bar {
+  width: min(220px, 50vw);
+  height: 2px;
+  margin-top: 28px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  animation: splash-fade-in 600ms ease 700ms both;
+}
+
+.splash__bar span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  transform-origin: left;
+  animation: splash-progress calc(var(--splash-ms, 2600ms) - 900ms) ease-in-out 700ms both;
+}
+
+.splash__skip {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 18px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.splash__skip:hover,
+.splash__skip:focus-visible {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes splash-fade-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes splash-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes splash-rise {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes splash-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .splash, .splash * { animation: none !important; }
+}
