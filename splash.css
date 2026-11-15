@@ -1,4 +1,11 @@
+
 .splash {
+  /* timing, all derived from --splash-ms (set inline or default 2600ms) */
+  --t: var(--splash-ms, 2600ms);
+  --letter-start: calc(var(--t) * 0.07);   /* when the first letter begins */
+  --letter-gap:   calc(var(--t) * 0.075);  /* delay between letters */
+  --letter-dur:   calc(var(--t) * 0.3);    /* how long each letter takes to rise */
+
   position: fixed;
   inset: 0;
   z-index: 1000;
@@ -25,15 +32,46 @@
   text-align: center;
 }
 
-.splash__logo {
-  margin: 0;
-  font-size: clamp(56px, 9vw, 120px);
-  font-weight: 300;
-  letter-spacing: 0.12em;
-  text-indent: 0.12em;               /* keeps the spaced letters optically centred */
-  text-shadow: 0 2px 24px rgba(15, 40, 65, 0.35);
-  animation: splash-rise 1100ms cubic-bezier(.16, 1, .3, 1) 200ms both;
+/* ---------- Brand: icon + name ---------- */
+
+.splash__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 28px);
 }
+
+.splash__icon {
+  height: clamp(48px, 8vw, 110px);
+  width: auto;
+  flex: none;
+  filter: drop-shadow(0 2px 24px rgba(91, 18, 245, 0.45));
+  animation: splash-rise var(--letter-dur) cubic-bezier(.16, 1, .3, 1) 0ms both;
+}
+
+.splash__logo {
+  display: flex;
+  margin: 0;
+  font-family: "Lobster Two", "Brush Script MT", cursive;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(64px, 11vw, 150px);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.splash__letter {
+  display: inline-block;
+  padding: 0 0.02em;
+  /* blue (#0a3cff) -> cyan (#3bf0f6) across the 5 letters */
+  color: color-mix(in srgb, #3bf0f6 calc(var(--i) * 25%), #0a3cff);
+  text-shadow: 0 2px 24px rgba(30, 140, 255, 0.35);
+  animation: splash-rise var(--letter-dur) cubic-bezier(.16, 1, .3, 1)
+             calc(var(--letter-start) + var(--i) * var(--letter-gap)) both;
+}
+
+/* ---------- Tagline and progress bar ---------- */
+/* both start once the last letter has begun */
 
 .splash__tagline {
   margin: 0;
@@ -41,7 +79,8 @@
   font-weight: 300;
   letter-spacing: 3px;
   color: rgba(255, 255, 255, 0.82);
-  animation: splash-rise 900ms ease 700ms both;
+  animation: splash-rise calc(var(--t) * 0.25) ease
+             calc(var(--letter-start) + 4 * var(--letter-gap)) both;
 }
 
 .splash__bar {
@@ -51,7 +90,8 @@
   overflow: hidden;
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.18);
-  animation: splash-fade-in 600ms ease 700ms both;
+  animation: splash-fade-in calc(var(--t) * 0.2) ease
+             calc(var(--letter-start) + 4 * var(--letter-gap)) both;
 }
 
 .splash__bar span {
@@ -60,8 +100,14 @@
   height: 100%;
   background: rgba(255, 255, 255, 0.85);
   transform-origin: left;
-  animation: splash-progress calc(var(--splash-ms, 2600ms) - 900ms) ease-in-out 700ms both;
+  /* fills just before the fade-out begins */
+  animation: splash-progress
+             calc(var(--t) - var(--letter-start) - 4 * var(--letter-gap) - var(--t) * 0.15)
+             ease-in-out
+             calc(var(--letter-start) + 4 * var(--letter-gap)) both;
 }
+
+/* ---------- Skip button ---------- */
 
 .splash__skip {
   position: absolute;
@@ -85,6 +131,8 @@
 }
 
 .splash.is-leaving { animation: splash-fade-out 300ms ease forwards; }
+
+/* ---------- Keyframes ---------- */
 
 @keyframes splash-fade-in  { from { opacity: 0; } to { opacity: 1; } }
 @keyframes splash-fade-out { from { opacity: 1; } to { opacity: 0; } }
