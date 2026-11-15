@@ -10,7 +10,7 @@
   overflow: hidden;
   background:
     linear-gradient(rgba(5, 15, 30, 0.72), rgba(5, 15, 30, 0.9)),
-    url("/Astronaut-Drifting.webp") center / cover no-repeat,
+    url("Astronaut-Drifting.webp") center / cover no-repeat,
     #06101d;
   animation:
     splash-fade-in 400ms ease both,
@@ -84,6 +84,8 @@
   color: #fff;
   border-color: rgba(255, 255, 255, 0.6);
 }
+
+.splash.is-leaving { animation: splash-fade-out 300ms ease forwards; }
 
 @keyframes splash-fade-in  { from { opacity: 0; } to { opacity: 1; } }
 @keyframes splash-fade-out { from { opacity: 1; } to { opacity: 0; } }
